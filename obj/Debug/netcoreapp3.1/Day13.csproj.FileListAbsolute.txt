@@ -1,0 +1,13 @@
+C:\Users\kevin\source\repos\Day13\bin\Debug\netcoreapp3.1\Day13.exe
+C:\Users\kevin\source\repos\Day13\bin\Debug\netcoreapp3.1\Day13.deps.json
+C:\Users\kevin\source\repos\Day13\bin\Debug\netcoreapp3.1\Day13.runtimeconfig.json
+C:\Users\kevin\source\repos\Day13\bin\Debug\netcoreapp3.1\Day13.runtimeconfig.dev.json
+C:\Users\kevin\source\repos\Day13\bin\Debug\netcoreapp3.1\Day13.dll
+C:\Users\kevin\source\repos\Day13\bin\Debug\netcoreapp3.1\Day13.pdb
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.csprojAssemblyReference.cache
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.AssemblyInfoInputs.cache
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.AssemblyInfo.cs
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.csproj.CoreCompileInputs.cache
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.dll
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.pdb
+C:\Users\kevin\source\repos\Day13\obj\Debug\netcoreapp3.1\Day13.genruntimeconfig.cache
