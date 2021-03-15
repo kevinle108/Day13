@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yeBGjZZ3Ofg3tAFx0dPRRjd6oKdWRjPC2KEqwGs0nzwy2FzlVaC/C0496uj55KLoz+5zvDVRNjk73zTZiwQ4aA==",
+  "dgSpecHash": "Az1GBrSvHyosj2zRYZwQgm6B/1uc4GyQ7xAe8NzwBp1csvrhZfaffC1HhpEUICTMrHOVcFClk29n3xuU+YUrfQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\kevin\\source\\repos\\Day13\\Day13.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kevin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

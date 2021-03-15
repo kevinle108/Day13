@@ -7,53 +7,63 @@ namespace Day13
     {
         static void Main(string[] args)
         {
-            List<string> vocab = new List<string>()
-            {
-                "MTAO", "OF", "TEC", "MXD", "T", "O", "AF", "AE", "A",
-                "TAZ", "MTBXAE", "ABCDE", "TAEC", "MTOZE", "MITXFAEC", "MTAFC", "MTSFOC", "MTZABC",
-                "MTAFOC", "MITXFFEC", "XAEC", "MTAFEC", "F", "MTBXAEC", "ZAEC", "MFECFEC", "TAX",
-                "MTXAFEC", "TAFEC", "MXAFECI", "TAE", "ITXAFC", "MTAFOCC", "MITXAFEOC", "D", "MXITABFEC",
-                "AC", "MTAFOC", "MD", "MTXABCD", "OA", "MITXAFEC", "OFMIT", "TED", "MTAEC",
-                "MITXFAEE", "TAF", "TAC", "AEOC", "TA", "MITXAFC", "ITXAFEC", "MITXAFE", "MITAFEC"
-            };
-            ShrinkableWords("MITXAFEC", vocab);
-            
-        }
-        static bool ShrinkableWords(string word, List<string> vocab)
-        {
-            Stack<string> result = new Stack<string>();
-            if (ShrinkableWords(word, vocab, 0, result)) {
-                PrintResult(result);
-                return true;
-            } else return false;
+            SpelledWithPElements("canine");
+            Console.WriteLine();
+            SpelledWithPElements("procrastinate");
+            Console.WriteLine();
+            SpelledWithPElements("computer");
         }
 
-        static bool ShrinkableWords(string word, List<string> vocab, int index, Stack<string> result)
+        static bool SpelledWithPElements(string word)
         {
-            if (word == "") return true;
-            if (!vocab.Contains(word))
+            List<string> unformattedElements = new List<string>
             {
+                "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"
+            };
+            List<string> elements = unformattedElements.ConvertAll(ele => ele.ToUpper());
+            Stack<string> result = new Stack<string>();
+            if (SpelledWithPElements(word.ToUpper(), elements, result))
+            {
+                Console.WriteLine($"Your word {word} can be spelled with the following Periodic Elements:");
+                PrintResults(result);
+                return true;
+            }
+            else {
+                Console.WriteLine($"Sorry! your word '{word}' cannot be spelled using Periodic Elements");
                 return false;
-            }            
-            for (int i = 0; i < word.Length; i++)
+            };
+        }
+
+        static bool SpelledWithPElements(string word, List<string> elements, Stack<string> results)
+        {
+            if (word == "")
             {
-                string nextWord = word.Remove(i, 1);
-                result.Push(word + $" -> will remove {word[i]} next");
-                if (ShrinkableWords(nextWord, vocab, 0, result)) 
-                {
-                    return true;
-                } 
-                else result.Pop();
+                return true;
+            }
+            if (elements.Contains(word.Substring(0,2)))
+            {
+                results.Push(word.Substring(0, 2));
+                if (SpelledWithPElements(word.Substring(2), elements, results)) return true;
+                results.Pop();
+            }
+            if (elements.Contains(word.Substring(0,1)))
+            {
+                results.Push(word.Substring(0, 1));
+                if (SpelledWithPElements(word.Substring(1), elements, results)) return true;
             }
             return false;
+            
         }
-
-        static void PrintResult(Stack<string> result)
+        static void PrintResults(Stack<string> results)
         {
-            foreach (string word in result)
+            string spelling = "";
+            foreach (string ele in results)
             {
-                Console.WriteLine(word);
+                string formattedEle = ele.Length > 1 ? ele[0].ToString() + ele.Substring(1).ToLower() : ele;
+                spelling = formattedEle + spelling;
             }
+            Console.WriteLine(spelling);
+
         }
     }
 
